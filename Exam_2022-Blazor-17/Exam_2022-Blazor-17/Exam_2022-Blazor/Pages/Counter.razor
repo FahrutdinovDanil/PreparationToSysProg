@@ -1,0 +1,81 @@
+﻿@inject IJSRuntime JsRuntime
+@page "/counter"
+
+<h1>Counter</h1>
+
+<p>Сила: @strenght</p>
+<button class="btn btn-primary" @onclick="IncrementCount1">+</button>
+<button class="btn btn-primary" @onclick="IncrementCount2">-</button>
+<p>Живучесть: @life</p>
+<button class="btn btn-primary" @onclick="IncrementCount3">+</button>
+<button class="btn btn-primary" @onclick="IncrementCount4">-</button>
+<p>Урон: @Damage</p>
+<p>Здоровье: @Health</p>
+<p>Очки: @Points</p>
+
+
+
+@code {
+    private double strenght = 10;
+    private double life = 10;
+    private double Damage = 50;
+    private double Health = 105;
+    private double Points = 5;
+    private void IncrementCount1()
+    {
+        if (Points != 0)
+        {
+            Points--;
+            strenght++;
+            Damage = strenght * 5;
+            Health = strenght * 0.5 + life * 10;
+        }
+        else
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Не осталось очков!");
+        }
+    }
+    private void IncrementCount2()
+    {
+        if (strenght != 10)
+        {
+            Points++;
+            strenght--;
+            Damage = strenght * 5;
+            Health = strenght * 0.5 + life * 10;
+        }
+        else
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Число очков не опускается меньше 10!");
+        }
+    }
+    private void IncrementCount3()
+    {
+        if (Points != 0)
+        {
+            Points--;
+            life++;
+            Damage = strenght * 5;
+            Health = strenght * 0.5 + life * 10;
+        }
+        else
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Не осталось очков!");
+        }
+    }
+    private void IncrementCount4()
+    {
+        if (life != 10)
+        {
+            Points++;
+            life--;
+            Damage = strenght * 5;
+            Health = strenght * 0.5 + life * 10;
+        }
+        else
+        {
+            JsRuntime.InvokeVoidAsync("alert", "Число очков не опускается меньше 10!");
+        }
+    }
+
+}

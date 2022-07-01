@@ -1,0 +1,13 @@
+﻿@page "/fetchdata"
+@inject Client Client1
+@using Exam_2022_Blazor.Data
+
+<div class="Registration">
+    <h1>Личный Кабинет</h1>
+    <p><input type="text" @bind-value="Client1.Login" /></p>
+    <p><input type="text" @bind-value="Client1.Mail" /></p>
+</div>
+
+@code {
+    List<Client> client = Client.GetClient();
+}

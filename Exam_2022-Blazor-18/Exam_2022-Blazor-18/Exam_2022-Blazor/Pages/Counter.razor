@@ -1,0 +1,30 @@
+﻿@using Exam_2022_Blazor.Data
+@inject Microsoft.AspNetCore.Components.NavigationManager NavigationManager;
+@inject Client Client1 
+    @*внедрение зависимости*@
+@page "/counter"
+
+<div class="Registration">
+    <p><b>Имя:</b></p>
+    <p><input type="text" @bind-value="Client1.Name" /></p>
+    <p><b>Логин:</b></p>
+    <p><input type="text" @bind-value="Client1.Login" /></p>
+    <p><b>Почта:</b></p>
+    <p><input type="text" @bind-value="Client1.Mail" /></p>
+</div>
+
+<button class="btn btn-primary" @onclick="Regis">Registration</button>
+
+@code {
+    public static List<Client> cllist;
+    private string Name;
+    private string Login;
+    private string Mail;
+
+
+    private void Regis()
+    {
+        Client1 = new Client(Name,Login,Mail);
+        NavigationManager.NavigateTo("/fetchdata");
+    }
+}

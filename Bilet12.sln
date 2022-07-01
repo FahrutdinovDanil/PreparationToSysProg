@@ -23,6 +23,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorApp2", "..\..\..\Down
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam_2022-Blazor", "..\..\..\Downloads\Exam_2022-Blazor-Bilet8\Exam_2022-Blazor-Bilet8\Exam_2022-Blazor\Exam_2022-Blazor.csproj", "{0E8880CB-8F05-409D-B013-DBD598443FF8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bilet18", "Bilet18", "{3BAE08B8-33A3-465E-AC8A-2C92F55F31A1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam_2022-Blazor", "..\..\..\Downloads\Exam_2022-Blazor-18\Exam_2022-Blazor-18\Exam_2022-Blazor\Exam_2022-Blazor.csproj", "{2AE6E55F-8552-4C10-98B8-D073A248705C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bilet 17", "Bilet 17", "{D8CA4E96-C18F-4BF9-90DB-8D5D2EE5D792}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Exam_2022-Blazor", "..\..\..\Downloads\Exam_2022-Blazor-17\Exam_2022-Blazor-17\Exam_2022-Blazor\Exam_2022-Blazor.csproj", "{B59F2D65-8A40-412A-8469-6FBE3259036F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,9 +77,21 @@ Global
 		{0E8880CB-8F05-409D-B013-DBD598443FF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E8880CB-8F05-409D-B013-DBD598443FF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E8880CB-8F05-409D-B013-DBD598443FF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2AE6E55F-8552-4C10-98B8-D073A248705C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2AE6E55F-8552-4C10-98B8-D073A248705C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2AE6E55F-8552-4C10-98B8-D073A248705C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2AE6E55F-8552-4C10-98B8-D073A248705C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B59F2D65-8A40-412A-8469-6FBE3259036F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B59F2D65-8A40-412A-8469-6FBE3259036F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B59F2D65-8A40-412A-8469-6FBE3259036F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B59F2D65-8A40-412A-8469-6FBE3259036F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2AE6E55F-8552-4C10-98B8-D073A248705C} = {3BAE08B8-33A3-465E-AC8A-2C92F55F31A1}
+		{B59F2D65-8A40-412A-8469-6FBE3259036F} = {D8CA4E96-C18F-4BF9-90DB-8D5D2EE5D792}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3C2A111D-376A-46D5-A67A-8770473822E5}
