@@ -1,0 +1,62 @@
+﻿@page "/personlist"
+@using Exam_2022_Blazor.Data
+@inject IJSRuntime JsRuntime
+<h1>PersonList</h1>
+<div class="students">
+    <p><b>Имя:</b></p>
+    <p><input type="text" @bind-value="name" /></p>
+    <p><b>Фамилия:</b></p>
+    <p><input type="text" @bind-value="surname" /></p>
+</div>
+<button class="btn btn-primary" @onclick="btn_perslist">Вывести список</button>
+<button class="btn btn-primary" @onclick="btn_persadd">Добавить</button>
+<button class="btn btn-primary" @onclick="btn_persdel">Удалить</button>
+@if (perslist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Дата</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in perslist)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Surname</td>
+                    <td>@item.Time</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@code {
+    public static List<Person> perslist;
+
+
+    private string name;
+    private string surname;
+    private DateTime time;
+
+    private void btn_persadd()
+    {
+        Person.AddToList(name, surname, time = DateTime.Now);
+    }
+
+    private void btn_perslist()
+    {
+        perslist = Person.GetPerson();
+    }
+
+    private void btn_persdel()
+    {
+        Person.DelList(name, surname, time = DateTime.Now);
+    }
+}

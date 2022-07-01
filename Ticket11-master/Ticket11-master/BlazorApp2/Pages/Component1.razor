@@ -1,0 +1,39 @@
+﻿@page "/Team"
+
+@using BlazorApp2.Data
+<button class="btn btn-primary" @onclick="team">Вывести список команд</button>
+@if (studlist == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Имя</th>
+                <th>Логин</th>
+                <th>Почта</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in studlist)
+            {
+            <tr>
+                <td>@forecast.Name</td>
+                <td>@forecast.Login</td>
+                <td>@forecast.Email</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    public static List<BlazorApp1.Data.Team> studlist;
+    private void team()
+    {
+        studlist = BlazorApp1.Data.Team.GetTeam();
+    }
+}
+

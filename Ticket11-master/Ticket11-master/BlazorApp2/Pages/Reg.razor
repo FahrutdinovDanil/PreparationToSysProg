@@ -1,0 +1,30 @@
+﻿@page "/Registration"
+@using BlazorApp1.Data
+
+<h1>Регистрация</h1>
+<div class="students">
+    <p><b>Имя:</b></p>
+    <p><input type="text" @bind-value="name" /></p>
+    <p><b>Логин:</b></p>
+    <p><input type="text" @bind-value="login" /></p>
+    <p><b>Почта:</b></p>
+    <p><input type="text" @bind-value="email" /></p>
+</div>
+
+<button class="btn registr" @onclick="Regis">
+    Registration
+</button>
+
+@code { 
+
+    private string name;
+    private string login;
+    private string email;
+
+
+    private void Regis()
+    {
+        Team.Add(new Team(name, login, email));
+        Team.AddToList(name, login, email);
+    }
+}
